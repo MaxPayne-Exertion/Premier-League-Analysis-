@@ -17,7 +17,7 @@ class PremierLeagueApp:
         self.root = root
         self.root.title("Premier League Analysis")
         self.root.geometry("1000x800")
-        self.root.resizable(False, False)
+        self.root.resizable(True, True)
         
         self.show_landing_page()
     
@@ -35,7 +35,7 @@ class PremierLeagueApp:
             df = pd.read_csv("players.csv")
             player_data = df[df['Player'] == player_name].iloc[0]
             
-            # Display Stats in a clean list
+            # Display Stats 
             stats = [
                 ("Team", player_data['Team']),
                 ("Position", player_data['Position']),
@@ -52,7 +52,19 @@ class PremierLeagueApp:
         except Exception as e:
             tk.Label(profile_win, text="Profile data not found.", fg="red", bg=DARK_BG).pack()
 
-        tk.Button(profile_win, text="Close", command=profile_win.destroy, bg="#374151", fg="white").pack(pady=30)
+        #close Button
+        tk.Button(
+            profile_win, 
+            text="CLOSE PROFILE", 
+            command=profile_win.destroy, 
+            bg="#ffffff",         
+            fg="black",           
+            font=("Helvetica", 10, "bold"),
+            padx=20, 
+            pady=10,
+            relief="flat",       
+            cursor="hand2"        
+        ).pack(pady=30)
 
     def show_team_members(self, team_name):
         squad_win = tk.Toplevel(self.root)
@@ -280,42 +292,38 @@ class PremierLeagueApp:
         self.render_dashboard_elements()
 
     def render_dashboard_elements(self):
-        """Main layout organizer for the dashboard"""
+        """Uses weighted grids to ensure sections don't compress each other"""
         for widget in self.main_content.winfo_children():
             widget.destroy()
 
-        # --- Top KPIs ---
-        kpi_frame = tk.Frame(self.main_content, bg="#020617")
-        kpi_frame.pack(fill="x", pady=10)
+        # Configure columns to have equal weight (1:1:1 ratio)
+        self.main_content.columnconfigure(0, weight=1)
+        self.main_content.columnconfigure(1, weight=1)
+        self.main_content.columnconfigure(2, weight=1)
+        self.main_content.rowconfigure(1, weight=1) # Let the middle row expand
+
+        # --- Top KPIs (Span across all 3 columns) ---
+        k_frame = tk.Frame(self.main_content, bg="#020617")
+        k_frame.grid(row=0, column=0, columnspan=3, sticky="ew", pady=10)
         
-        try:
-            df = pd.read_csv("premier_league_data.csv")
-            top_team = df.iloc[0]['Team']
-        except:
-            top_team = "N/A"
+        self.create_kpi(k_frame, "Matches Played", "11,480").pack(side="left", padx=10, expand=True)
+        self.create_kpi(k_frame, "Total Goals", "31,232").pack(side="left", padx=10, expand=True)
+        self.create_kpi(k_frame, "Current Leader", "Arsenal").pack(side="left", padx=10, expand=True)
 
-        self.create_kpi(kpi_frame, "Matches Played", "11,480").grid(row=0, column=0, padx=10)
-        self.create_kpi(kpi_frame, "Total Goals", "31,232").grid(row=0, column=1, padx=10)
-        self.create_kpi(kpi_frame, "Current Leader", top_team).grid(row=0, column=2, padx=10)
-
-        # --- Middle Row: 3 Columns ---
-        mid_frame = tk.Frame(self.main_content, bg="#020617")
-        mid_frame.pack(fill="both", expand=True, pady=10)
-
-        # Column 1: Chart
-        chart_cont = tk.Frame(mid_frame, bg="#102A43", padx=5, pady=5)
-        chart_cont.pack(side="left", fill="both", expand=True, padx=5)
-        self.plot_stats(chart_cont)
-
-        # Column 2: Standings Table
-        table_cont = tk.Frame(mid_frame, bg="#102A43", padx=5, pady=5)
-        table_cont.pack(side="left", fill="both", expand=True, padx=5)
-        self.create_table(table_cont)
-
-        # Column 3: Top Scorers (The New Addition)
-        scorers_cont = tk.Frame(mid_frame, bg="#102A43", padx=5, pady=5)
-        scorers_cont.pack(side="left", fill="both", expand=True, padx=5)
-        self.create_top_scorers(scorers_cont)
+        # --- Column 1: Chart ---
+        c1 = tk.Frame(self.main_content, bg="#102A43", highlightbackground=PRIMARY, highlightthickness=1)
+        c1.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
+        self.plot_stats(c1)
+        
+        # --- Column 2: Standings Table ---
+        c2 = tk.Frame(self.main_content, bg="#102A43", highlightbackground=PRIMARY, highlightthickness=1)
+        c2.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
+        self.create_table(c2)
+        
+        # --- Column 3: Golden Boot (Now with plenty of room!) ---
+        c3 = tk.Frame(self.main_content, bg="#102A43", highlightbackground=PRIMARY, highlightthickness=1)
+        c3.grid(row=1, column=2, sticky="nsew", padx=10, pady=10)
+        self.create_top_scorers(c3)
 
     def create_top_scorers(self, parent):
         """Creates the Golden Boot leaderboard"""
