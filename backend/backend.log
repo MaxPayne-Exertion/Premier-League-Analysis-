@@ -1,0 +1,97 @@
+nohup: ignoring input
+Watching for file changes with StatReloader
+[06/Jan/2026 16:16:24] "GET /api/teams/ HTTP/1.1" 200 2268
+[06/Jan/2026 16:16:25] "GET /api/players/ HTTP/1.1" 200 46905
+[06/Jan/2026 16:19:42] "GET /api/teams/ HTTP/1.1" 200 2268
+[06/Jan/2026 16:19:42] "GET /api/teams/ HTTP/1.1" 200 2268
+[06/Jan/2026 16:19:42] "GET /api/players/ HTTP/1.1" 200 46905
+[06/Jan/2026 16:19:42] "GET /api/players/ HTTP/1.1" 200 46905
+[06/Jan/2026 16:30:20] "GET /api/teams/ HTTP/1.1" 200 6795
+[06/Jan/2026 16:30:20] "GET /api/players/ HTTP/1.1" 200 284530
+[06/Jan/2026 16:30:21] "GET /api/teams/ HTTP/1.1" 200 6795
+[06/Jan/2026 16:30:21] "GET /api/teams/ HTTP/1.1" 200 6795
+[06/Jan/2026 16:30:22] "GET /api/players/ HTTP/1.1" 200 284530
+[06/Jan/2026 16:30:22] "GET /api/players/ HTTP/1.1" 200 284530
+[06/Jan/2026 16:30:54] "GET /api/players/?search=Haaland HTTP/1.1" 200 284530
+[06/Jan/2026 16:30:54,020] - Broken pipe from ('127.0.0.1', 51080)
+[06/Jan/2026 16:31:04] "GET /api/teams/ HTTP/1.1" 200 6795
+[06/Jan/2026 16:31:04] "GET /api/teams/ HTTP/1.1" 200 6795
+[06/Jan/2026 16:31:06] "GET /api/players/ HTTP/1.1" 200 284530
+[06/Jan/2026 16:31:06] "GET /api/players/ HTTP/1.1" 200 284530
+/home/archimedes/Documents/PremierLeagueAnalysis/backend/api/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 06, 2026 - 16:15:51
+Django version 6.0, using settings 'premier_league_backend.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[06/Jan/2026 16:31:56] "GET /api/players/?search=Haaland HTTP/1.1" 200 418
+[06/Jan/2026 16:34:16] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:34:16] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:34:17] "GET /api/players/ HTTP/1.1" 200 237400
+[06/Jan/2026 16:34:17] "GET /api/players/ HTTP/1.1" 200 237400
+[06/Jan/2026 16:39:30] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:39:30] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:40:03] "GET /api/players/?limit=1 HTTP/1.1" 200 238006
+[06/Jan/2026 16:40:03,221] - Broken pipe from ('127.0.0.1', 48836)
+[06/Jan/2026 16:40:38] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:40:38] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:40:39] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:40:39] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:44:58] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:44:58] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:44:59] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:44:59] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:47:51] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:47:51] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:47:52] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:47:52] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:48:11] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:48:11] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:48:12] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:48:12] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:51:25] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:51:25] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:51:26] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:51:26] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:30] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:30] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:31] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:31] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:40] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:40] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:41] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:42] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:44] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:44] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:53:46] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:53:46] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:56:26] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:56:27] "GET /api/teams/ HTTP/1.1" 200 5639
+[06/Jan/2026 16:56:28] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 16:56:28] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:09] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:09] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:10] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:10] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:14] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:14] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:15] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:15] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:27] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:27] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:01:28] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:01:28] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:04:29] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:04:29] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:04:30] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:04:30] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:08:31] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:08:31] "GET /api/teams/ HTTP/1.1" 200 5716
+[06/Jan/2026 17:08:32] "GET /api/players/ HTTP/1.1" 200 238006
+[06/Jan/2026 17:08:32] "GET /api/players/ HTTP/1.1" 200 238006
