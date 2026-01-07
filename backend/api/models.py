@@ -1,7 +1,8 @@
 from django.db import models
 
 class Team(models.Model):
-    team_name = models.CharField(max_length=100, unique=True)
+    season = models.CharField(max_length=10, default='2023-24')
+    team_name = models.CharField(max_length=100)
     logo_url = models.URLField(max_length=500, blank=True, null=True)
     matches_played = models.IntegerField(default=0)
     wins = models.IntegerField(default=0)
@@ -14,11 +15,15 @@ class Team(models.Model):
     points = models.IntegerField(default=0)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        unique_together = ['season', 'team_name']
+
     def __str__(self):
-        return self.team_name
+        return f"{self.team_name} ({self.season})"
 
 class Player(models.Model):
-    player_id = models.CharField(max_length=100, unique=True) # External ID
+    season = models.CharField(max_length=10, default='2023-24')
+    player_id = models.CharField(max_length=100) # External ID
     name = models.CharField(max_length=100)
     team = models.ForeignKey(Team, related_name='players', on_delete=models.CASCADE)
     nationality = models.CharField(max_length=100, blank=True, null=True)
@@ -40,5 +45,8 @@ class Player(models.Model):
     
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        unique_together = ['season', 'player_id']
+
     def __str__(self):
-        return f"{self.name} ({self.team.team_name})"
+        return f"{self.name} ({self.team.team_name}) - {self.season}"

@@ -3,8 +3,8 @@ from rest_framework.routers import DefaultRouter
 from .views import TeamViewSet, PlayerViewSet
 
 router = DefaultRouter()
-router.register(r'teams', TeamViewSet)
-router.register(r'players', PlayerViewSet)
+router.register(r'teams', TeamViewSet, basename='team')
+router.register(r'players', PlayerViewSet, basename='player')
 
 urlpatterns = [
     path('', include(router.urls)),
